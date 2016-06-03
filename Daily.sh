@@ -11,9 +11,9 @@ do
     if [ "$DAY_OF_WEEK" == "1" ] || [ "$DAY_OF_WEEK" == "2" ] || [ "$DAY_OF_WEEK" == "3" ] || [ "$DAY_OF_WEEK" == "4" ] || [ "$DAY_OF_WEEK" == "5" ] ; then
     echo "Monitor ${STOCK_ID} at 星期${DAY_OF_WEEK}, ${HOUR}點${MINUTE}分"
         if [ "$HOUR" == "$HOUR_RUN_STOCK" ] && [ "$MINUTE" == "$MINUTE_RUN_STOCK" ]; then
-            cp ../TaiwanStockMonitor/${STOCK_ID}.csv ./
+            cp ../TaiwanStockMonitor/${STOCK_ID}.txt ./
             git add .
-            info=`git diff ${STOCK_ID}.csv`
+            info=`git diff ${STOCK_ID}.txt`
             git commit -am "Update ${STOCK_ID} information - ${info}"
             git push
         fi
