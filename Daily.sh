@@ -13,7 +13,8 @@ do
         if [ "$HOUR" == "$HOUR_RUN_STOCK" ] && [ "$MINUTE" == "$MINUTE_RUN_STOCK" ]; then
             cp ../TaiwanStockMonitor/${STOCK_ID}.csv ./
             git add .
-            git commit -am "Update ${STOCK_ID} information"
+            info=`git diff ${STOCK_ID}.csv`
+            git commit -am "Update ${STOCK_ID} information - ${info}"
             git push
         fi
     fi
