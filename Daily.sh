@@ -1,7 +1,7 @@
 
 STOCK_ID="2454"
 HOUR_RUN_STOCK=16
-MINUTE_RUN_STOCK=40
+MINUTE_RUN_STOCK=20
 
 while [ 1 ]
 do
@@ -17,6 +17,8 @@ do
             git commit -am "Update ${STOCK_ID} information - ${info}"
             git push
         fi
+    else
+        echo "Today is Saturday or Sunday. You should go to outside and do some exercise."
     fi
     sleep 60
 done
